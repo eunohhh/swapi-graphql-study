@@ -1,0 +1,25 @@
+query GetAllFilms {
+  allFilms {
+    films {
+      id
+      title
+      director
+      releaseDate
+      episodeID
+    }
+  }
+}
+
+query GetFilm($id: ID!) {
+  film(id: $id) {
+    id
+    title
+    director
+    releaseDate
+    episodeID
+    openingCrawl
+    producers
+    created
+    edited
+  }
+}

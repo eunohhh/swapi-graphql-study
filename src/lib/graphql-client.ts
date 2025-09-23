@@ -1,10 +1,7 @@
 import { GraphQLClient } from "graphql-request";
 
-export const graphqlClient = new GraphQLClient(
-  "https://swapi-graphql.netlify.app/.netlify/functions/index",
-  {
-    headers: {
-      "Content-Type": "application/json",
-    },
+export const graphqlClient = new GraphQLClient("./schema.graphql", {
+  headers: {
+    "Content-Type": "application/json",
   },
-);
+});
