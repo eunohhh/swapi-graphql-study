@@ -10,7 +10,17 @@ import {
 function makeClient() {
   const httpLink = new HttpLink({
     // this needs to be an absolute url, as relative urls cannot be used in SSR
-    uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
+    uri: "https://swapi-graphql.netlify.app/graphql",
+    fetchOptions: {
+      // method: "POST",
+      // headers: {
+      //   "Access-Control-Allow-Origin": "*",
+      //   "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+      //   "Access-Control-Allow-Headers":
+      //     "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+      // },
+      // credentials: "omit",
+    },
     // you can disable result caching here if you want to
     // (this does not work if you are rendering your page with `export const dynamic = "force-static"`)
     // fetchOptions: {
