@@ -29,7 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ApolloProvider>{children}</ApolloProvider>
+        <ApolloProvider>
+          <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            {children}
+          </main>
+        </ApolloProvider>
         <Toaster richColors position="top-center" />
       </body>
     </html>
