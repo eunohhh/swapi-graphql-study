@@ -5,17 +5,16 @@ const config: CodegenConfig = {
   schema: "./schema.graphql",
   documents: ["src/**/*.{ts,tsx,graphql}"],
   generates: {
-    './src/gql/': {
-      preset: 'client',
-      plugins: [],
-      config: {
-        useTypeImports: true,
-      }
-    }
+    "src/generated/graphql.ts": {
+			plugins: ["typescript", "typescript-operations", "typed-document-node"],
+			config: {
+				fetcher: "graphql-request",
+				exposeDocument: true,
+				exposeQueryKeys: true,
+				exposeMutationKeys: true,
+			},
+		},
   },
-  hooks: {
-    afterAllFileWrite: ['biome format --write src/gql/']
-  }
 }
 
 export default config;
