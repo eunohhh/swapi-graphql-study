@@ -48,11 +48,12 @@ export const GET_ALL_FILMS = gql`
   query GetAllFilms {
     allFilms {
       films {
-        id
-        title
         director
-        releaseDate
         episodeID
+        openingCrawl
+        title
+        releaseDate
+        id
       }
     }
   }
@@ -70,6 +71,41 @@ export const GET_FILM = gql`
       producers
       created
       edited
+    }
+  }
+`;
+
+export const GET_ALL_PEOPLE_WITH_HOMEWORLD = gql`
+  query GetAllPeopleWithHomeworld {
+    allPeople {
+      people {
+        id
+        name
+        homeworld {
+          id
+          name
+          diameter
+        }
+      }
+    }
+  }
+`;
+
+export const GET_ALL_PLANETS = gql`
+  query GetAllPlanets {
+    allPlanets {
+      planets {
+        id
+        name
+        gravity
+        diameter
+        climates
+        orbitalPeriod
+        population
+        rotationPeriod
+        surfaceWater
+        terrains
+      }
     }
   }
 `;
